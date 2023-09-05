@@ -18,36 +18,30 @@
 
 
 let cashfree = Cashfree({
-    mode:"production"
+    mode: "sandbox"
 });
 
-let netbanking = cashfree.create('netbanking', {
-    values:{
-        netbankingBankName: 'HDFCR',
-        buttonText: 'HDFC Bank',
-        buttonIcon: true
-    }
+let cl = cashfree.create('cardlessEMI', {
+	values:{
+		provider: 'flexmoney',
+		phone: '9414090598',
+		buttonText: 'Flexmoney',
+		buttonIcon: true
+	}
 });
-netbanking.on('loaderror', function(data){
-    console.log(data.error)
+cl.on('loaderror', function(data){
+	console.log(data.error)
 })
-netbanking.mount("#netbanking");
-netbanking.on('ready', function(d){
-    console.log(netbanking.data().value);
-})
-
-
-let var1;
-document.getElementById("netbanking").addEventListener("click", function(){
-    var1=netbanking;
-    console.log(var1)
+cl.mount("#mount-here");
+cl.on('ready', function(d){
+    console.log(d.value) 
 })
 
 document.getElementById("pay").addEventListener("click", function(){
     console.log("hi")
 	let paymentPromise = cashfree.pay({
-		paymentMethod: netbanking,
-		paymentSessionId: "session_puE-FF-z06FwOckfqUYfeKCdBNvsdBbkqqKXvPeiy3TFgntGNcoINFj9x7QB587QbDp_DjazyWKgUJ3KTafchkiUGDCX68arbcnUqzxg6LtF",
+		paymentMethod: cl,
+		paymentSessionId: "session_mr4-ZGWPhbJG0YWl-0PphxjfrEJsLPgf5zw5pH71Oske3DrY0a7WK0MQw_-9PJYzH_1YeD4vBcoArhwhCDBAc27rASh4HaOJCkJKRP1eazWv",
         returnUrl: "https://test.cashfree.com/pgappsdemos/v3success.php?myorder={order_id}"
 	});
 	paymentPromise.then(function(result){
