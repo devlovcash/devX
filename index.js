@@ -1,22 +1,3 @@
-// const cashfree = Cashfree({
-//     mode: "production",
-// });
-
-// let cl = cashfree.create('cardlessEMI', {
-// 	values:{
-// 		provider: 'flexmoney',
-// 		phone: '94140905',
-// 		buttonText: 'Flexmoney',
-// 		buttonIcon: true
-// 	}
-// });
-
-// component.mount("#mount-here");
-// cl.on('ready', function(d){
-//     console.log(d.value) 
-// })
-
-
 let cashfree = Cashfree({
     mode: "sandbox"
 });
