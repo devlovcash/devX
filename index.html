@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Document</title>
+        <style>
+            body {
+                background-color: rgba(131, 201, 236, 0.64)
+            }
+            button {
+                width: 220px;
+                padding: 6px 10px;
+                border-radius: 8px;
+                margin-top: 20px;
+                background-color: #6930CA;
+                color: white;
+            }
+            .amount {
+                font-size: 24px;
+                font-weight: 500;
+                color: #6930CA;
+            }
+            p {
+                font-size: 16px;
+                font-weight: 500;
+                color: #918f0f;
+            }
+            .container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+            #netbanking {
+                margin-left: 200px !important;
+                margin-top: 20px !important;
+            }
+            #netbanking1 {
+                margin-left: 200px !important;
+                margin-top: 20px !important;
+            }
+        </style>
+	</head>
+	<body>
+        <!-- <div style="text-align: center; margin-top: 75px;">
+            <img width="400" src="https://www.nilkamalfurniture.com/cdn/shop/products/pebblely_18_800x.jpg?v=1678453271">
+            <div>
+                <p>
+                    Nilkamal Fyrebird Athena Gaming Chair (Grey/Turquoise)
+                </p>
+            </div>
+            <div class="amount">₹6000</div>
+            <div id="netbanking"></div>
+            <button id="pay">Pay</button>
+         </div> -->
+
+         <div class="container">
+            <img width="400" src="https://www.nilkamalfurniture.com/cdn/shop/products/pebblely_18_800x.jpg?v=1678453271">
+            <div>
+                <p>
+                    Nilkamal Fyrebird Athena Gaming Chair (Grey/Turquoise)
+                </p>
+            </div>
+            <div class="amount">₹6000</div>
+            <div id="netbanking"></div>
+            <div id="netbanking1"></div>
+            <button id="pay">Pay</button>
+         </div>
+
+		<script src="https://sdk.cashfree.com/js/v3/cashfree.js"></script>
+        <script src="index.js"></script>
+	</body>
+</html>
