@@ -18,13 +18,13 @@
 
 
 let cashfree = Cashfree({
-    mode:"production"
+    mode: "sandbox"
 });
 
 let netbanking = cashfree.create('netbanking', {
     values:{
-        netbankingBankName: 'HDFCR',
-        buttonText: 'HDFC Bank',
+        netbankingBankName: 'ICICR',
+        buttonText: 'ICICI Bank',
         buttonIcon: true
     }
 });
@@ -37,17 +37,11 @@ netbanking.on('ready', function(d){
 })
 
 
-let var1;
-document.getElementById("netbanking").addEventListener("click", function(){
-    var1=netbanking;
-    console.log(var1)
-})
-
 document.getElementById("pay").addEventListener("click", function(){
     console.log("hi")
 	let paymentPromise = cashfree.pay({
 		paymentMethod: netbanking,
-		paymentSessionId: "session_puE-FF-z06FwOckfqUYfeKCdBNvsdBbkqqKXvPeiy3TFgntGNcoINFj9x7QB587QbDp_DjazyWKgUJ3KTafchkiUGDCX68arbcnUqzxg6LtF",
+		paymentSessionId: "session_R4g5B84VEw_RuCOix4YSvw1xfy6-R0QzmL3IDrV_i3qmipIVqE7Sthx0kleCrw98Op9lHRhoCaa06c7IMUXeAkmQhyizi0vsq_m2sAXAu3xD",
         returnUrl: "https://test.cashfree.com/pgappsdemos/v3success.php?myorder={order_id}"
 	});
 	paymentPromise.then(function(result){
